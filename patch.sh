@@ -4,7 +4,7 @@ function pause (){
     read -p "按任意键继续..."
 }
 
-echo -e "🟣 1. 首先请进入您的chatgpt-on-wechat目录下！\n示例：如果您的chatgpt-on-wechat安装在/root/chatgpt-on-wechat目录，使用如下命令切换到该目录: cd /root/chatgpt-on-wechat"
+echo -e "🟣 1. 请确保您已经进入chatgpt-on-wechat目录下！\n示例：如果您的chatgpt-on-wechat安装在/root/chatgpt-on-wechat目录，使用如下命令切换到该目录: cd /root/chatgpt-on-wechat"
 pause
 ls -l app.py config.py channel/chat_channel.py plugins/plugin.py &> /dev/null
 if [ $? -ne 0 ]; then
@@ -20,31 +20,31 @@ echo -e "🟣 3. 开始替换文件以添加支持更多灵积模型，被替换
 pause
 TIME=$(date '+%y%m%d%H%M%S')
 if [ ! -d "bot/dashscope/" ]; then
-    echo "🟢 bot/dashscope不存在，直接将/root/cow-dashscope-patch/bot/dashscope复制到bot/dashscope"
-    cp -r /root/cow-dashscope-patch/bot/dashscope bot/
+    echo "🟢 bot/dashscope不存在，直接将/tmp/cow-dashscope-patch/bot/dashscope复制到bot/dashscope"
+    cp -r /tmp/cow-dashscope-patch/bot/dashscope bot/
 else
     echo "🟢 备份bot/dashscope/dashscope_bot.py到bot/dashscope/dashscope_bot.py-$TIME"
     mv bot/dashscope/{dashscope_bot.py,dashscope_bot.py-$TIME}
-    cp /root/cow-dashscope-patch/bot/dashscope/dashscope_bot.py bot/dashscope/dashscope_bot.py
+    cp /tmp/cow-dashscope-patch/bot/dashscope/dashscope_bot.py bot/dashscope/dashscope_bot.py
     echo "🟢 备份bot/dashscope/dashscope_session.py到bot/dashscope/dashscope_session.py-$TIME"
     mv bot/dashscope/{dashscope_session.py,dashscope_session.py-$TIME}
-    cp /root/cow-dashscope-patch/bot/dashscope/dashscope_session.py bot/dashscope/dashscope_session.py
+    cp /tmp/cow-dashscope-patch/bot/dashscope/dashscope_session.py bot/dashscope/dashscope_session.py
 fi
 echo "🟢 备份bot/bot_factory.py到bot/bot_factory.py-$TIME"
 mv bot/{bot_factory.py,bot_factory.py-$TIME}
-cp /root/cow-dashscope-patch/bot/bot_factory.py bot/bot_factory.py
+cp /tmp/cow-dashscope-patch/bot/bot_factory.py bot/bot_factory.py
 echo "🟢 备份bridge/bridge.py到bridge/bridge.py-$TIME"
 mv bridge/{bridge.py,bridge.py-$TIME}
-cp /root/cow-dashscope-patch/bridge/bridge.py bridge/bridge.py
+cp /tmp/cow-dashscope-patch/bridge/bridge.py bridge/bridge.py
 echo "🟢 备份common/const.py到common/const.py-$TIME"
 mv common/{const.py,const.py-$TIME}
-cp /root/cow-dashscope-patch/common/const.py common/const.py
+cp /tmp/cow-dashscope-patch/common/const.py common/const.py
 echo "🟢 备份plugins/godcmd/godcmd.py到plugins/godcmd/godcmd.py-$TIME"
 mv plugins/godcmd/{godcmd.py,godcmd.py-$TIME}
-cp /root/cow-dashscope-patch/plugins/godcmd/godcmd.py plugins/godcmd/godcmd.py
-echo "🟢 备份config.py到cconfig.py-$TIME"
+cp /tmp/cow-dashscope-patch/plugins/godcmd/godcmd.py plugins/godcmd/godcmd.py
+echo "🟢 备份config.py到config.py-$TIME"
 mv config.py config.py-$TIME
-cp /root/cow-dashscope-patch/config.py config.py
+cp /tmp/cow-dashscope-patch/config.py config.py
 
 echo -e "🟣 4. 文件替换完成，开始检查是否替换成功..."
 pause
