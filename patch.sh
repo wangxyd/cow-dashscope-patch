@@ -53,6 +53,6 @@ if [ $? -ne 0 ]; then
     echo "🔴 文件替换失败！请保存上面的输出结果，用于手动恢复文件！"
     exit 1
 else
-    echo -e "🟣 文件替换成功！下一步请手动编辑当前目录下的config.json文件，添加灵积模型的api_key！\n如果您还没有api_key，请访问aliy灵积模型服务控制台创建API-KEY：https://dashscope.console.aliyun.com/apiKey\n配置示例如下：\n  \"dashscope_api_key\": \"sk-8526ce275dc3r4d43a26z9f91rsa3288\",\n"
+    echo -e "🟣 文件替换成功！下一步请手动编辑当前目录下的config.json文件，添加灵积模型的api_key！\n如果您还没有api_key，请访问阿里云灵积模型服务控制台创建API-KEY：https://dashscope.console.aliyun.com/apiKey\n配置示例如下：\n  \"dashscope_api_key\": \"sk-8526ce275dc3r4d43a26z9f91rsa3288\",\n"
     echo -e "🟣 配置完成灵积模型的api_key之后，重启chatgpt-on-wechat即可使用阿里云的灵积模型！\n支持的模型有：qwen-max、qwen-plus、qwen-turbo、qwen-max-0107, qwen-max-0403, qwen-max-longcontext, qwen1.5-72b-chat, qwen1.5-14b-chat, qwen1.5-7b-chat, qwen-72b-chat, qwen-14b-chat, qwen-7b-chat, qwen-1.8b-chat, qwen-1.8b-longcontext-chat, chatglm3-6b\n部分模型可能需要单独申请，另外请注意模型的免费额度有效期及免费额度使用情况！\n安装结束！"
 fi
