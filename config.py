@@ -69,12 +69,13 @@ available_setting = {
     "claude_uuid": "",
     # claude api key
     "claude_api_key":"",
-    # 通义千问API, 获取方式查看文档 https://help.aliyun.com/document_detail/2587494.html
+    # 阿里云百炼通义千问API, 获取方式查看文档 https://help.aliyun.com/document_detail/2587494.html
     "qwen_access_key_id": "",
     "qwen_access_key_secret": "",
     "qwen_agent_key": "",
     "qwen_app_id": "",
     "qwen_node_id": "",  # 流程编排模型用到的id，如果没有用到qwen_node_id，请务必保持为空字符串
+    # 阿里云灵积API
     "dashscope_api_key": "",
     # Google Gemini Api Key
     "gemini_api_key": "",
@@ -161,8 +162,9 @@ available_setting = {
     "linkai_api_key": "",
     "linkai_app_code": "",
     "linkai_api_base": "https://api.link-ai.chat",  # linkAI服务地址，若国内无法访问或延迟较高可改为 https://api.link-ai.tech
-    # START: 回复消息需要@对方的概率，取值范围0~1，0每次都不@对方，1每次都@对方，默认值为1
-    "need_at_probability": 0.9,
+    # START: 群聊中开启延时回复消息的设置
+    "group_chat_reply_wait_min": 5, # 最小延迟秒数，这里的值没意义
+    "group_chat_reply_wait_max": 10, # 最大延迟秒数
     # END
 }
 
